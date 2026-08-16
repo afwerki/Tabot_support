@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071d3d" />
+    <meta
+      name="description"
+      content="Official support page for Tabot, the EOTC community app."
+    />
+    <title>Tabot Support</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #071d3d;
+        --navy-soft: #0c2c58;
+        --maroon: #861b2b;
+        --gold: #d69b27;
+        --gold-soft: #f7ead0;
+        --cream: #fffaf0;
+        --paper: #ffffff;
+        --ink: #211812;
+        --muted: #6c625b;
+        --line: rgba(134, 27, 43, 0.14);
+        --shadow: 0 22px 55px rgba(27, 20, 12, 0.11);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 0%, rgba(214, 155, 39, 0.14), transparent 32rem),
+          linear-gradient(180deg, #fffdf8 0%, var(--cream) 100%);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .topbar {
+        background: var(--navy);
+        color: white;
+      }
+
+      .nav {
+        width: min(1120px, calc(100% - 40px));
+        min-height: 76px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(214, 155, 39, 0.8);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--gold);
+        font-family: Georgia, serif;
+        font-size: 27px;
+        font-weight: 700;
+      }
+
+      .brand-name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      .nav-link {
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        padding: 9px 16px;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        color: white;
+        background:
+          radial-gradient(circle at 80% 15%, rgba(214, 155, 39, 0.22), transparent 19rem),
+          linear-gradient(140deg, var(--navy) 0%, var(--navy-soft) 100%);
+      }
+
+      .hero::after {
+        content: "✛";
+        position: absolute;
+        right: max(5vw, 30px);
+        top: 12px;
+        color: rgba(214, 155, 39, 0.10);
+        font-family: Georgia, serif;
+        font-size: clamp(180px, 31vw, 380px);
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 82px 0 92px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--gold);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.15;
+      }
+
+      h1 {
+        max-width: 720px;
+        margin: 0;
+        font-size: clamp(44px, 7vw, 76px);
+      }
+
+      .hero-copy {
+        max-width: 650px;
+        margin: 22px 0 31px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: clamp(17px, 2vw, 21px);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #efbc46, var(--gold));
+        color: #211506;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 12px 28px rgba(214, 155, 39, 0.24);
+      }
+
+      main {
+        width: min(1120px, calc(100% - 40px));
+        margin: -34px auto 0;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 64px;
+      }
+
+      .quick-grid,
+      .details-grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: var(--shadow);
+      }
+
+      .quick-card {
+        padding: 27px;
+      }
+
+      .icon {
+        width: 47px;
+        height: 47px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 18px;
+        border-radius: 15px;
+        background: var(--gold-soft);
+        color: var(--maroon);
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      .card h2,
+      .card h3 {
+        margin-top: 0;
+      }
+
+      .quick-card h2 {
+        margin-bottom: 7px;
+        font-size: 23px;
+      }
+
+      .quick-card p,
+      .section-card p,
+      .section-card li {
+        color: var(--muted);
+      }
+
+      .text-link {
+        color: var(--maroon);
+        font-weight: 800;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      .section-heading {
+        margin: 68px 0 24px;
+        text-align: center;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        color: var(--maroon);
+        font-size: clamp(32px, 4vw, 44px);
+      }
+
+      .section-heading p {
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-card {
+        padding: 31px;
+      }
+
+      .section-card h3 {
+        margin-bottom: 14px;
+        font-size: 25px;
+      }
+
+      .section-card ol,
+      .section-card ul {
+        padding-left: 22px;
+        margin-bottom: 0;
+      }
+
+      .section-card li + li {
+        margin-top: 8px;
+      }
+
+      .notice {
+        margin-top: 20px;
+        padding: 17px 19px;
+        border-left: 4px solid var(--gold);
+        border-radius: 10px;
+        background: #fff8e9;
+        color: #5c4932;
+      }
+
+      .contact-card {
+        margin-top: 24px;
+        padding: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        background: linear-gradient(135deg, #7c1727, var(--maroon));
+        color: white;
+      }
+
+      .contact-card h2 {
+        margin: 0 0 6px;
+        font-size: clamp(28px, 4vw, 39px);
+      }
+
+      .contact-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .contact-card .button {
+        flex: 0 0 auto;
+        background: white;
+        color: var(--maroon);
+        box-shadow: none;
+      }
+
+      footer {
+        padding: 31px 20px 42px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        color: var(--maroon);
+        font-weight: 700;
+      }
+
+      @media (max-width: 800px) {
+        .quick-grid,
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-inner {
+          padding: 64px 0 76px;
+        }
+
+        .contact-card {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .nav,
+        .hero-inner,
+        main {
+          width: min(100% - 28px, 1120px);
+        }
+
+        .nav-link {
+          display: none;
+        }
+
+        .quick-card,
+        .section-card,
+        .contact-card {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Tabot Support home">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span class="brand-name">Tabot</span>
+        </a>
+        <a class="nav-link" href="#account-deletion">Account deletion</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <p class="eyebrow">EOTC community app</p>
+        <h1>How can we help?</h1>
+        <p class="hero-copy">
+          Find support for your Tabot account, sign-in, notifications, content,
+          privacy, and account deletion.
+        </p>
+        <a class="button" href="mailto:support@tabot.app?subject=Tabot%20Support%20Request">
+          Contact Tabot Support
+        </a>
+      </div>
+    </section>
+
+    <main>
+      <section class="quick-grid" aria-label="Quick support options">
+        <article class="card quick-card">
+          <div class="icon" aria-hidden="true">?</div>
+          <h2>Get help</h2>
+          <p>Tell us what happened, the device you use, and any error message you saw.</p>
+          <a class="text-link" href="mailto:support@tabot.app?subject=Help%20with%20Tabot">Email support</a>
+        </article>
+
+        <article class="card quick-card">
+          <div class="icon" aria-hidden="true">✓</div>
+          <h2>Troubleshooting</h2>
+          <p>Check your internet connection, update Tabot, then close and reopen the app.</p>
+          <a class="text-link" href="#troubleshooting">View quick steps</a>
+        </article>
+
+        <article class="card quick-card">
+          <div class="icon" aria-hidden="true">×</div>
+          <h2>Delete account</h2>
+          <p>You can permanently request account deletion directly inside the Tabot app.</p>
+          <a class="text-link" href="#account-deletion">View instructions</a>
+        </article>
+      </section>
+
+      <div class="section-heading">
+        <p class="eyebrow">Support centre</p>
+        <h2>Helpful information</h2>
+        <p>Quick guidance for the most common questions.</p>
+      </div>
+
+      <section class="details-grid">
+        <article class="card section-card" id="troubleshooting">
+          <h3>App troubleshooting</h3>
+          <ol>
+            <li>Confirm that your device has a stable internet connection.</li>
+            <li>Install the latest available version of Tabot.</li>
+            <li>Close the app completely and open it again.</li>
+            <li>Sign out and sign back in if the issue relates to your account.</li>
+            <li>If the issue continues, email us with a screenshot and your device model.</li>
+          </ol>
+        </article>
+
+        <article class="card section-card">
+          <h3>Sign-in help</h3>
+          <p>
+            Tabot supports the sign-in methods shown in the app, including email,
+            Google, and Sign in with Apple where available.
+          </p>
+          <ul>
+            <li>Use the same sign-in method you originally used to create your account.</li>
+            <li>For email accounts, use “Forgot password” on the sign-in screen.</li>
+            <li>For Apple or Google accounts, confirm you are signed into the correct provider account.</li>
+          </ul>
+        </article>
+
+        <article class="card section-card" id="account-deletion">
+          <h3>Delete your Tabot account</h3>
+          <p>You can request permanent deletion from inside the app:</p>
+          <ol>
+            <li>Open <strong>Tabot</strong> and sign in.</li>
+            <li>Open <strong>Profile</strong>.</li>
+            <li>Select <strong>Privacy &amp; Safety</strong>.</li>
+            <li>Select <strong>Delete Account</strong> and follow the confirmation steps.</li>
+          </ol>
+          <div class="notice">
+            Account deletion removes or anonymises the account information associated
+            with your profile. If you cannot access the app, contact support using the
+            email address below.
+          </div>
+        </article>
+
+        <article class="card section-card" id="privacy">
+          <h3>Privacy and safety</h3>
+          <p>
+            Tabot provides in-app tools for reporting content and managing your account.
+            Please use the report option on relevant user-generated content when needed.
+          </p>
+          <p>
+            For privacy questions or data requests, contact
+            <a class="text-link" href="mailto:support@tabot.app?subject=Tabot%20Privacy%20Request">support@tabot.app</a>.
+          </p>
+        </article>
+      </section>
+
+      <section class="card contact-card" aria-label="Contact support">
+        <div>
+          <h2>Still need help?</h2>
+          <p>Our support team can help with your Tabot account or app experience.</p>
+        </div>
+        <a class="button" href="mailto:support@tabot.app?subject=Tabot%20Support%20Request">
+          support@tabot.app
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#account-deletion">Account deletion</a>
+        <a href="#privacy">Privacy</a>
+        <a href="mailto:support@tabot.app">Contact</a>
+      </div>
+      <div>© <span id="year"></span> Tabot. All rights reserved.</div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
