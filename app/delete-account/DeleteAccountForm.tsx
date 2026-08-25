@@ -15,7 +15,8 @@ export function DeleteAccountForm() {
     event.preventDefault();
     setState({ kind: "loading" });
 
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     const payload = {
       email: String(form.get("email") ?? ""),
       signInMethod: String(form.get("signInMethod") ?? ""),
@@ -35,7 +36,7 @@ export function DeleteAccountForm() {
         throw new Error(result.error || "We could not submit your request.");
       }
       setState({ kind: "success", requestId: result.requestId });
-      event.currentTarget.reset();
+      formElement.reset();
     } catch (error) {
       setState({
         kind: "error",
